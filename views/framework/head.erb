@@ -1,0 +1,36 @@
+<head>
+
+  <title><%= get_formatted_pagetitle %></title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-style-type" content="text/css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!--[IEMobile]> <meta name="MobileOptimized" content="width" /> <![endif]-->
+
+  <link rel="shortcut icon" href="<%= settings.public_images_path %>favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%= settings.public_images_path %>apple-touch-icon-144x144-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%= settings.public_images_path %>apple-touch-icon-114x114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%= settings.public_images_path %>apple-touch-icon-72x72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" href="<%= settings.public_images_path %>apple-touch-icon-precomposed.png" />
+
+  <%= @Assets.Stylesheet("application.css") %>
+
+  <%= @Assets.JavaScript("modernizr-2.6.2.js") %>
+
+  <script type="text/javascript">
+    var search_coder = search_coder || {};
+    search_coder.global = search_coder.global || {};
+    search_coder.global.settings = search_coder.global.settings || {};
+    search_coder.global.settings.mediaLTLBreakpoint = "767px";
+    search_coder.global.settings.mediaLTLMediaQuery = "only screen and (max-width: "+ search_coder.global.settings.mediaLTLBreakpoint +")";
+  </script>
+
+</head>

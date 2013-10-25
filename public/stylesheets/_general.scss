@@ -1,0 +1,14 @@
+body {
+  background-color: white;
+  font-family: $font_lucida;
+  font-weight: 400;
+  font-size: 2vw;
+  color: black;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.limiter {
+  @extend .clearfix;
+  padding: 0 4vw;
+}

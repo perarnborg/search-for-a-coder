@@ -1,0 +1,80 @@
+.user-search {
+  .searcher-type {
+    float: left;
+    min-height: 35vw;
+    overflow: hidden;
+    position: relative;
+    width: 29vw;    
+    input {
+      position: absolute;
+      left: -999px;
+    } 
+    label {
+      border: 2px solid #999;
+      border-radius: 5px;
+      display: block;
+      font-size: 3vw;
+      padding: 4vw 2vw;
+      position: relative;
+      
+    }
+    input:checked + label {
+      border: 2px solid #14ff17;
+      color: #14ff17;
+    }
+    input.js-tech-no:checked + label {
+      border: 2px solid #ff00f2;
+      color: #ff00f2;
+    }
+    .input-field+.input-field {
+      margin-top: 2vw;
+    }
+  }  
+  .tech-fields {
+    display: none;
+  }
+  .search-question {
+    float: left;
+    margin-left: 2vw;
+    width: 28vw;
+    height: 35vw;
+  }
+  .form-submit {
+    clear: both;
+  }
+  .location {
+    float: left;
+    margin-right: 2vw;
+    width: 28vw;
+    label {
+      display: block;
+    }
+    input {
+      @extend .borderbox;
+      width: 100%;
+    }
+  }
+  input[type=submit] {
+    margin-top: 2vw;
+  }
+  .pending {
+    @include opacity(0.4);
+  }
+}
+.waiting-counddown {
+  background: white;
+  border: 3px solid black;
+  position: fixed;
+  left: 50%;
+  line-height: 1;
+  font-size: 20px;
+  margin: -60px 0 0 -145px;
+  padding: 20px;
+  text-align: center;
+  width: 240px;
+  top: 50%;
+  z-index: 2;
+  .countdown {
+    font-size: 100px;   
+  }
+}

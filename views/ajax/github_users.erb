@@ -1,0 +1,9 @@
+<% if @Data %>
+<% @Data.each do |user| %>
+<li class="user clearfix">
+  <a href="https://www.github.com/<%= user["login"] %>" target="_blank">
+  <img src="<%= user["avatar_url"] %>" class="user-image" alt="" /> <h4><%= user["login"] %></h4>
+  </a>
+</li>
+<% end %>
+<% end %>

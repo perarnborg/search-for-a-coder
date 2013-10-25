@@ -1,0 +1,93 @@
+@mixin border-radius($topleft, $topright, $bottomright, $bottomleft) {
+  -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+  -moz-border-radius: $topleft $topright $bottomright $bottomleft;
+  -o-border-radius: $topleft $topright $bottomright $bottomleft;
+  -ms-border-radius: $topleft $topright $bottomright $bottomleft;
+  border-radius: $topleft $topright $bottomright $bottomleft;
+}
+
+@mixin border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin box-shadow($x: 0, $y: 0, $blur: 5px, $spread: 5px, $color: rgba(0, 0, 0, 0.5), $inset: false) {
+  @if $inset == true {
+      $inset: " inset";
+  } @else {
+      $inset: "";
+  }
+  -webkit-box-shadow: $x $y $blur $spread $color#{$inset};
+  box-shadow: $x $y $blur $spread $color#{$inset};
+}
+
+@mixin transition($property, $duration: 200ms, $timingFunction: linear, $delay: 0s) {
+  -webkit-transition: $property $duration $timingFunction $delay;
+  -moz-transition: $property $duration $timingFunction $delay;
+  -ms-transition: $property $duration $timingFunction $delay;
+  -o-transition: $property $duration $timingFunction $delay;
+  transition: $property $duration $timingFunction $delay;
+}
+@mixin gradient-vertical($topColor, $bottomColor) {
+	background: mix($topColor, $bottomColor); // returns a mixes of the two colors at 50% each.
+	background: -moz-linear-gradient(top,  $topColor 0%, $bottomColor 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$topColor), color-stop(100%,$bottomColor)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $topColor 0%,$bottomColor 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $topColor 0%,$bottomColor 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $topColor 0%,$bottomColor 100%); /* IE10+ */
+	background: linear-gradient(top,  $topColor 0%,$bottomColor 100%); /* W3C */
+}
+
+@mixin columncount($value) {
+	-moz-column-count: $value;
+	-moz-column-gap: $value*10px;
+	-webkit-column-count: $value;
+	-webkit-column-gap: $value*10px;
+	column-count: $value;
+	column-gap: $value*10px;
+}
+
+@mixin toparrow($size: 5px, $color: $color_white) {
+
+  position: relative;
+
+  &:after, &:before {
+    bottom: 100%;
+    left: 20px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-bottom-color: $color;
+    border-width: $size;
+    margin-left: 0-$size;
+  }
+
+}
+
+@mixin text-shadow($value: rgba(0,0,0,0.3) 0 -1px 0) {
+	text-shadow: $value;
+}
+
+@mixin opacity($value) {
+  opacity: $value;
+  filter: alpha(opacity = #{$value*100});
+}
+
+@mixin media-ltl {
+  @media only screen and (max-width: $breakpoint_small) { @content; }
+}
+
+@mixin media-gts {
+  @media only screen and (min-width: $breakpoint_small+1) { @content; }
+}
+
+@mixin media-retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2) { @content; }
+}

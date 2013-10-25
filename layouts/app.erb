@@ -1,0 +1,17 @@
+<!doctype html>
+<!--[if IE 7]> <html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <%= partial :'framework/head' %>
+  <body>
+
+    <%= partial :"framework/header" %>
+
+    <%= yield %>
+
+    <%= partial :"framework/footer" %>
+
+    <%= partial :"framework/scripts" %>
+  </body>
+</html>

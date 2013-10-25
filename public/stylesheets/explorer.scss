@@ -1,0 +1,9 @@
+@import "constants";
+
+.ie {
+
+  &.ie8 {}
+
+  &.ie8, &.ie7, &.ie6 {}
+
+}
