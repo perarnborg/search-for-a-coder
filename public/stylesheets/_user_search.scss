@@ -1,65 +1,89 @@
-.user-search {
-  .searcher-type {
-    float: left;
-    min-height: 35vw;
-    overflow: hidden;
+.searcher-type {
+  float: left;
+  min-height: 35vw;
+  overflow: hidden;
+  position: relative;
+  width: 27vw;
+  input {
+    position: absolute;
+    left: -999px;
+  }
+  label {
+    border: 2px solid #999;
+    border-radius: 5px;
+    display: block;
+    font-size: 3vw;
+    padding: 4vw 2vw;
     position: relative;
-    width: 29vw;    
-    input {
-      position: absolute;
-      left: -999px;
-    } 
-    label {
-      border: 2px solid #999;
-      border-radius: 5px;
-      display: block;
-      font-size: 3vw;
-      padding: 4vw 2vw;
-      position: relative;
-      
-    }
-    input:checked + label {
-      border: 2px solid #14ff17;
-      color: #14ff17;
-    }
-    input.js-tech-no:checked + label {
-      border: 2px solid #ff00f2;
-      color: #ff00f2;
-    }
-    .input-field+.input-field {
-      margin-top: 2vw;
-    }
-  }  
-  .tech-fields {
-    display: none;
+
   }
-  .search-question {
-    float: left;
-    margin-left: 2vw;
-    width: 28vw;
-    height: 35vw;
+  input:checked + label {
+    border: 2px solid #14ff17;
+    color: #14ff17;
   }
-  .form-submit {
-    clear: both;
+  input.js-tech-no:checked + label {
+    border: 2px solid #ff00f2;
+    color: #ff00f2;
   }
-  .location {
-    float: left;
-    margin-right: 2vw;
-    width: 28vw;
-    label {
-      display: block;
-    }
-    input {
-      @extend .borderbox;
-      width: 100%;
-    }
-  }
-  input[type=submit] {
+  .input-field+.input-field {
     margin-top: 2vw;
   }
-  .pending {
-    @include opacity(0.4);
+}
+.tech-fields {
+  display: none;
+}
+.search-question {
+  float: left;
+  margin-left: 2vw;
+  width: 29vw;
+  height: 35vw;
+  .input-field {
+    position: relative;
+    &+.input-field {
+      margin-top: 1vw;
+    }
   }
+  input[type=radio] {
+    position: absolute;
+    left: 0;
+    &+label {
+      display: block;
+      padding-left: 2.5vw;
+    }
+  }
+}
+.form-submit {
+  clear: both;
+}
+.location {
+  float: left;
+  margin-right: 2vw;
+  width: 27vw;
+  label {
+    display: block;
+  }
+  input {
+    @extend .borderbox;
+    font-size: 2vw;
+    height: 5vw;
+    width: 100%;
+  }
+}
+input[type=submit] {
+  @extend .borderbox;
+  background: #ff99f9;
+  border: 2px solid #dd00d0;
+  border-radius: 5px;
+  height: 7vw;
+  margin-left: 30vw;
+  width: 20vw;
+  .tech & {
+    background: #59ff53;
+    border: 2px solid #03ee06;
+  }
+}
+.pending {
+  @include opacity(0.4);
 }
 .waiting-counddown {
   background: white;
@@ -75,6 +99,6 @@
   top: 50%;
   z-index: 2;
   .countdown {
-    font-size: 100px;   
+    font-size: 100px;
   }
 }

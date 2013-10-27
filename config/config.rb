@@ -6,9 +6,6 @@ set :public_folder, "public"
 # Use Rack::Deflater to gzip assets
 use Rack::Deflater
 
-# Get some DB
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/search_coder.db")
-
 # Loads up all models in path
 Dir.glob("./models/*.rb").each {|r|
   require r

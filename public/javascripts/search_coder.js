@@ -10,25 +10,27 @@ application.SearchCoder.prototype.eventListeners = function() {
       if($element.prop('checked')) {
         if($element.val() == 'techy') {
           $('.js-tech-fields').show();
-          $('.js-non-tech-fields').hide();          
+          $('.js-non-tech-fields').hide();
+          $('.js-user-search').addClass('tech');
         } else {
           $('.js-tech-fields').hide();
           $('.js-non-tech-fields').show();
+          $('.js-user-search').removeClass('tech');
         }
       }
-    });    
+    });
     $('.js-characteristics, .js-experience').change(function(){
       var $element = $(this);
       var checked = $element.prop('checked');
       var $correspondingElement = $('#js-' + ($element.hasClass('js-characteristics') ? 'language' : 'followers') + '-' + $element.val().replace('..', '-').replace('>=', ''));
       $correspondingElement.prop('checked', checked);
-    });    
+    });
     $('.js-language, .js-followers').change(function(){
       var $element = $(this);
       var checked = $element.prop('checked');
       var $correspondingElement = $('#js-' + ($element.hasClass('js-language') ? 'characteristics' : 'experience') + '-' + $element.val().replace('..', '-').replace('>=', ''));
       $correspondingElement.prop('checked', checked);
-    });    
+    });
     $('.js-user-search').submit(function(){
       $('.js-user-search').addClass('pending');
       var q = '';

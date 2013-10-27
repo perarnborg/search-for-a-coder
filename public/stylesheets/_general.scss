@@ -1,13 +1,15 @@
 body {
   background-color: white;
-  font-family: $font_lucida;
+  font-family: $font_family;
   font-weight: 400;
   font-size: 2vw;
   color: black;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
-
+input {
+  font-family: $font_family
+}
 .limiter {
   @extend .clearfix;
   padding: 0 4vw;
